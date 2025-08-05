@@ -1,14 +1,74 @@
-# Job-Insights-A-Comprehensive-Dataset-of-Job-Descriptions-Experience-Skills-Packages-and-Reviews-<br>
-##  The "Job Insights" dataset is a comprehensive collection of data related to job descriptions, experience levels, required skills, salary packages, and reviews. It aims to provide valuable information and insights into various job roles and industries.
 
-This dataset includes a diverse range of job descriptions from multiple sectors, such as technology, finance, healthcare, marketing, and more. Each job listing contains detailed information about the position's responsibilities, qualifications, and any specific requirements.
+# 💼 Naukri.com Job Scraper: Data Science Role Insights
 
-In addition to job descriptions, the dataset includes data on experience levels, ranging from entry-level to senior positions. This information helps job seekers understand the level of expertise required for different roles and assists employers in setting appropriate expectations.
+## 🛠️ Tech Stack
 
-The dataset also covers the required skills for each job, providing a comprehensive overview of the technical, soft, and specialized skills demanded by employers in different industries. This information can be beneficial for individuals seeking to develop or enhance specific skill sets to increase their employability.
+- **Python**
+- **Selenium** – for dynamic web browsing and scraping
+- **BeautifulSoup** – for HTML parsing
+- **Pandas** – for tabular data handling
+- **NumPy** – for missing value handling
 
-Salary packages associated with each job are included in the dataset, providing insights into the average pay ranges for various positions. This information can assist job seekers in negotiating salaries and understanding industry standards for compensation.
+---
 
-Furthermore, the dataset incorporates reviews and ratings for specific job positions. These reviews offer subjective feedback from individuals who have held or currently hold these jobs, providing valuable insights into the work environment, company culture, and overall job satisfaction.
+## 📊 Project Overview
 
-Overall, the "Job Insights" dataset offers a comprehensive and well-rounded collection of information for job seekers, employers, researchers, and analysts. It enables data-driven decision-making in areas such as career planning, talent acquisition, salary benchmarking, and industry analysis.
+This project is a **web scraper** built to collect detailed **Data Science job listings** from [Naukri.com](https://www.naukri.com/). The script scrapes multiple pages and compiles a comprehensive dataset with:
+
+- 🧾 Job Descriptions  
+- 🏢 Company Names  
+- 💰 Salary Packages  
+- 🎯 Experience Requirements  
+- 🧠 Required Skills  
+- 🌍 Location  
+- 🌟 Ratings and Reviews  
+- 🔗 Job URLs
+
+This dataset is exported as `jobs.csv` for further analysis.
+
+---
+
+## 📂 Features Scraped
+
+| Feature          | Description                                                    |
+|------------------|----------------------------------------------------------------|
+| Job Title        | Role name (e.g., Data Scientist, ML Engineer)                  |
+| Company Name     | Hiring company                                                 |
+| Package          | Annual salary offered                                          |
+| Experience       | Experience required (e.g., 1-3 years, 5-10 years)              |
+| Skills           | Tags/keywords from job description                             |
+| Description      | Summary of responsibilities                                    |
+| Rating & Reviews | Company rating and number of reviews                           |
+| Location         | Job location (city/region)                                     |
+| Job Link         | Direct URL to job post                                         |
+
+---
+
+## 📈 Use Cases
+
+- 🔍 **Job Market Research**
+- 🤖 **Build ML models** to predict salaries or required skills
+- 📚 **Resume Matching Systems**
+- 📊 **EDA on skill demand** across job roles
+- 📍 **Salary benchmarks by experience and region**
+
+---
+
+## ⚙️ How It Works
+
+1. **Browser Initialization**:  
+   Opens Chrome in incognito mode using Selenium WebDriver.
+
+2. **Dynamic Page Navigation**:  
+   Visits and scrolls through multiple paginated links.
+
+3. **HTML Parsing**:  
+   Extracts job details using BeautifulSoup.
+
+4. **Data Storage**:  
+   Compiles data in lists → Converts to DataFrame → Saves as `jobs.csv`.
+
+5. **Loop Until Final Page**:  
+   Script iterates through pages until a fixed reload count is reached (e.g., 547).
+
+---
